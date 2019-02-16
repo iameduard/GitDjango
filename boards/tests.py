@@ -1,6 +1,7 @@
 from django.test import TestCase
 from django.urls import reverse,resolve
-from .views import home
+from .views import home, broad_topics
+from .models import Board
 
 # Create your tests here.
 class HomeTests(TestCase):

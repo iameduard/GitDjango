@@ -22,3 +22,13 @@ class Post(models.Model):
 	create_at=models.ForeignKey(User,related_name='posts',on_delete=models.CASCADE)
 	update_at=models.ForeignKey(User,null=True,related_name='+',on_delete=models.CASCADE)
 
+class Topic(models.Model):
+	#other fields..
+	#Add 'auto_now_add=True' to the 'last_updated' field
+	last_updated = models.DateTimeField(auto_now_add=True)
+
+class Post(models.Model):
+	#other fields
+	updated_by=models.ForeignKey(User,null=True,related_name='+',on_delete=models.PROTECT)
+
+
